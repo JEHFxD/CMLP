@@ -1,0 +1,423 @@
+/* ===========================================
+   PALETA CAMPRESTRE
+=========================================== */
+:root {
+    --verde-oscuro: #3d6b35;
+    --verde-medio: #6e9f43;
+    --verde-claro: #9ccf6a;
+    --crema: #faf7ef;
+    --crema2: #f2ede3;
+    --tierra: #a87f4c;
+    --corteza: #6a4d32;
+    --wsp: #25D366;
+}
+
+/* ===========================================
+   RESET GENERAL
+=========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2{
+    color:#3d6b35;
+    font-size: 30px
+}
+
+strong{
+    color:#3d6b35;
+    font-size: 20px
+}
+
+p{
+    font-size: 20px;
+}
+
+h3{
+    color:#3d6b35
+}
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: var(--crema);
+    color: #333;
+    line-height: 1.6;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
+}
+
+/* ===========================================
+   HEADER
+=========================================== */
+.header {
+    width: 100%;
+    padding: 18px 40px;
+    background: #2C410E;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header .logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #d1ffd1;
+    font-weight: 500;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--verde-claro);
+    transform: translateY(-2px);
+}
+
+.btn-header {
+    padding: 8px 18px;
+    background: var(--verde-medio);
+    border-radius: 6px;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.btn-header:hover {
+    background: #66d16a;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Overlay detrás del menú móvil */
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 900;
+}
+
+/* ============================
+   HERO y MISIÓN unificados
+============================ */
+
+/* Igualar estructura base */
+.hero,
+.mision {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    /* mis espacios mágicos iguales */
+    padding: 150px 60px 100px;
+
+   
+}
+
+/* Contenedor de texto con estilo unificado */
+.hero-text,
+.mision-text {
+    flex: 1;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Titulares sincronizados */
+.hero-text h1,
+.mision-text h2 {
+    font-size: 48px;
+    text-align: center;
+    color: var(--verde-oscuro);
+    margin-bottom: 20px;
+}
+
+/* Imagen con estilo consistente */
+.hero-img img,
+.mision-img img {
+    flex: 1;
+    width: 100%;
+    border-radius: 20px;
+    height: 500px;         /* mismo alto */
+    object-fit: cover;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+.btn-primary {
+    background: var(--verde-medio);
+    margin: 40px 1px;
+    padding: 12px 26px;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: var(--verde-claro);
+    box-shadow: 0 0 10px rgba(130, 228, 86, 0.6);
+}
+
+.mision-text ul {
+    list-style: none;
+}
+
+.mision-text ul li {
+    background: #e8f5e9;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    color: var(--verde-oscuro);
+    font-weight: 500;
+    border-left: 5px solid var(--verde-medio);
+}
+
+/* ===========================================
+   SECCIONES GENERALES
+=========================================== */
+.section {
+    padding: 70px 60px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--verde-medio);
+    border-radius: 4px;
+}
+
+
+/* ===========================================
+   BENEFICIOS
+=========================================== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 260px;
+    border-radius: 14px;
+    border-left: 8px solid var(--verde-medio);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===========================================
+   CÓMO FUNCIONA
+=========================================== */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.step {
+    background: white;
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.step i {
+    font-size: 40px;
+    color: var(--verde-medio);
+    margin-bottom: 15px;
+}
+
+/* ================================
+   CONTACTO + REDES INTEGRADAS
+================================ */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+/* Información */
+.contact-info p {
+    margin-bottom: .6rem;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .8rem 1rem;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+/* Redes dentro de contacto */
+.contact-redes {
+    margin-top: 2rem;
+}
+
+span{
+    font-size: 30px ;
+}
+
+i{
+    weight: 60px
+}
+.contact-redes h3 {
+    font-size: 1.8rem;
+    margin-bottom: .8rem;
+    color: var(--verde-oscuro);
+}
+
+.redes-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .8rem 1rem;
+    background: var(--verde-menta);
+    border-radius: 10px;
+    color: #222;
+    text-decoration: none;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.social-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Formulario */
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: .8rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--verde-medio);
+    border-radius: 6px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--verde-medio);
+}
+
+
+/* ===========================================
+   FOOTER
+=========================================== */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--corteza);
+    color: white;
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media (max-width: 900px) {
+
+    .menu-toggle { display: block; }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 260px;
+        height: 100vh;
+        background: var(--verde-oscuro);
+        flex-direction: column;
+        padding: 80px 30px;
+        gap: 25px;
+        transition: right 0.4s ease;
+        z-index: 998;
+    }
+
+    .nav.active { right: 0; }
+
+    #overlay.show { display: block; }
+
+   .hero,
+    .mision {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 25px 60px;
+    }
+
+    .hero-img img,
+    .mision-img img {
+        height: 280px;
+        weight: 280px
+    }
+}
