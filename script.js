@@ -1,28 +1,32 @@
-// Selección correcta según tu HTML
-const menuToggle = document.getElementById("menuBtn");
-const nav = document.querySelector(".nav");
-const overlay = document.getElementById("overlay");
-
-// Si los elementos existen
-if (menuToggle && nav && overlay) {
-
-    // Abrir / cerrar menú al hacer clic en el botón
-    menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        overlay.classList.toggle("show");
-    });
-
-    // Cerrar menú al hacer clic fuera
-    overlay.addEventListener("click", () => {
-        nav.classList.remove("active");
-        overlay.classList.remove("show");
-    });
-
-    // Cerrar menú al seleccionar un enlace
-    nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            nav.classList.remove("active");
-            overlay.classList.remove("show");
+(function() {
+    'use strict';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        
+        if (!hamburger || !nav) return;
+        
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            nav.classList.toggle('active');
+            this.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Cerrar al hacer click en enlaces
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                hamburger.textContent = '☰';
+            });
+        });
+        
+        // Cerrar al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                nav.classList.remove('active');
+                hamburger.textContent = '☰';
+            }
         });
     });
-}
+})();

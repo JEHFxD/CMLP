@@ -1,16 +1,31 @@
 /* ===========================================
-   PALETA CAMPRESTRE
+   PALETA CAMPRESTRE – MÁS VIVA
 =========================================== */
 :root {
-    --verde-oscuro: #3d6b35;
-    --verde-medio: #6e9f43;
-    --verde-claro: #9ccf6a;
+    --verde-oscuro: #2f5b29;
+    --verde-medio: #74b64a;
+    --verde-claro: #b4e28b;
     --crema: #faf7ef;
     --crema2: #f2ede3;
     --tierra: #a87f4c;
     --corteza: #6a4d32;
     --wsp: #25D366;
+    --verde-brillo: #d7ffb8;
+    --sombra-suave: 0 8px 20px rgba(0,0,0,0.08);
+    --sombra-media: 0 10px 25px rgba(0,0,0,0.15);
+    --sombra-fuerte: 0 20px 40px rgba(0, 40, 0, 0.15);
+    --blur-fondo: blur(10px);
+    --gradiente-campestre: linear-gradient(135deg, 
+        rgba(255, 248, 235, 0.92) 0%, 
+        rgba(255, 242, 219, 0.85) 50%,
+        rgba(242, 255, 235, 0.9) 100%);
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 
 /* ===========================================
    RESET GENERAL
@@ -21,38 +36,36 @@
     box-sizing: border-box;
 }
 
-h2{
-    color:#3d6b35;
-    font-size: 30px
-}
-
-strong{
-    color:#3d6b35;
-    font-size: 20px
-}
-
-p{
-    font-size: 20px;
-}
-
-h3{
-    color:#3d6b35
-}
 body {
     font-family: "Segoe UI", sans-serif;
     background: var(--crema);
     color: #333;
     line-height: 1.6;
-    background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+h2, h3, strong {
+    color: var(--verde-oscuro);
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+strong {
+    font-size: 20px;
+}
+p {
+    font-size: 20px;
 }
 
 /* ===========================================
-   HEADER
+   HEADER – MÁS PREMIUM CON EFECTO BLUR
 =========================================== */
 .header {
-    width: 100%;
+   width: 100%;
     padding: 18px 40px;
-    background: #2C410E;
+    background: linear-gradient(90deg, #2c410e, #3d6b35);
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -61,363 +74,810 @@ body {
     top: 0;
     left: 0;
     z-index: 999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.header .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 700;
+    box-shadow: var(--sombra-media);
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
 }
 
 .header .logo img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+    height: 55px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
 
-.nav {
+.logo {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
 }
 
+.brand-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* NAV */
 .nav a {
-    text-decoration: none;
-    color: #d1ffd1;
-    font-weight: 500;
+    color: #e4ffe4;
     font-size: 20px;
     transition: 0.3s ease;
 }
-
 .nav a:hover {
     color: var(--verde-claro);
     transform: translateY(-2px);
 }
 
-.btn-header {
-    padding: 8px 18px;
+.nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.nav ul a:hover {
+    color: #c3e8a3;
+}
+.nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+
+/* Botón de contacto en el nav */
+.nav .btn-header {
+    padding: 10px 22px;
     background: var(--verde-medio);
-    border-radius: 6px;
+    border-radius: 10px;
     color: #fff !important;
     font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* Botón de Contáctenos */
+.boton-contacto {
+    background: #8bd36f;
+    padding: 8px 18px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.boton-contacto:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+/* Botón en header */
+.btn-header {
+    padding: 10px 22px;
+    background: var(--verde-medio);
+    border-radius: 10px;
+    color: #fff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 .btn-header:hover {
-    background: #66d16a;
+    background: var(--verde-claro);
 }
 
-/* BOTÓN HAMBURGUESA */
-.menu-toggle {
+.hamburger {
     display: none;
-    font-size: 32px;
+    font-size: 30px;
     cursor: pointer;
-    color: #fff;
+    color: white;
 }
 
-/* Overlay detrás del menú móvil */
-#overlay {
+/* ===========================================
+   HERO CON OVERLAY MEJORADO
+=========================================== */
+.hero {
+   width: 100%;
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 9%;
+    position: relative;
+    background: url("image/Cosechas.avif") center/cover no-repeat;
+    border-radius: 0 0 35px 35px;
+    background-attachment: fixed;
+    margin-top: 90px; 
+}
+
+/* Capa con gradiente elegante en lugar de solo oscuro */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        rgba(0, 40, 0, 0.6) 100%);
+    border-radius: inherit;
+    z-index: 0;
+}
+
+/* Decoración adicional con patrón de hojas */
+.hero::after {
+    content: "🌱 🌿 🌾";
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 40px;
+    opacity: 0.15;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-text {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text h1 {
+    font-size: 62px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #f8ffe8;
+    margin-bottom: 35px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* Botón hero mejorado */
+.hero .btn-primary {
+    padding: 14px 34px;
+    font-size: 20px;
+    background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero .btn-primary:hover {
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+    transform: translateY(-5px);
+    border-color: white;
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
+}
+
+/* Se oculta la imagen lateral del hero original */
+.hero-img {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 900;
 }
 
-/* ============================
-   HERO y MISIÓN unificados
-============================ */
-
-/* Igualar estructura base */
-.hero,
+/* ===========================================
+   MISIÓN CON ESTILO CRISTAL
+=========================================== */
 .mision {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 60px;
-
-    /* mis espacios mágicos iguales */
-    padding: 150px 60px 100px;
-
-   
+    padding: 150px 60px 120px;
+    position: relative;
+    background: linear-gradient(135deg, var(--crema) 0%, #fff9ef 100%);
 }
 
-/* Contenedor de texto con estilo unificado */
-.hero-text,
+/* Línea decorativa orgánica */
+.mision::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--verde-medio), var(--verde-claro));
+    border-radius: 20px;
+}
+
+/* Tarjetas de texto con efecto cristal */
 .mision-text {
     flex: 1;
-    background: #ffffff;
-    padding: 35px 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: var(--sombra-fuerte);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
 }
 
-/* Titulares sincronizados */
-.hero-text h1,
+.mision-text:hover {
+    transform: translateY(-5px);
+}
+
 .mision-text h2 {
-    font-size: 48px;
-    text-align: center;
+    font-size: 50px;
     color: var(--verde-oscuro);
     margin-bottom: 20px;
 }
 
-/* Imagen con estilo consistente */
-.hero-img img,
-.mision-img img {
+/* ===== ESTILOS PARA LA IMAGEN ===== */
+.mision-img {
     flex: 1;
+    position: relative;
+}
+
+.mision-img img {
     width: 100%;
-    border-radius: 20px;
-    height: 500px;         /* mismo alto */
+    height: 520px;
     object-fit: cover;
-    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    border-radius: 25px;
+    box-shadow: var(--sombra-fuerte);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
 }
 
-.btn-primary {
-    background: var(--verde-medio);
-    margin: 40px 1px;
-    padding: 12px 26px;
-    color: white;
+.mision-img img:hover {
+    transform: scale(1.02);
+}
+
+/* Badge sobre la imagen */
+.mision-img-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid white;
+    z-index: 10;
+}
+
+.mision-img-badge span {
+    font-weight: 700;
+    color: var(--verde-oscuro);
     font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
+    letter-spacing: 0.5px;
+    display: block;
+    text-align: center;
+}
+
+/* ===== NUEVOS ESTILOS DE TEXTO ===== */
+.mision-badge {
+    display: inline-block;
+    background: var(--verde-medio);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 14px;
     font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.btn-primary:hover {
-    background: var(--verde-claro);
-    box-shadow: 0 0 10px rgba(130, 228, 86, 0.6);
+.text-destacado {
+    color: var(--verde-medio);
+    position: relative;
+    display: inline-block;
 }
 
+.text-destacado::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(212, 160, 23, 0.2);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.mision-destacado {
+    background: rgba(74, 124, 47, 0.08);
+    padding: 15px 20px;
+    border-radius: 16px;
+    margin: 15px 0 20px;
+    border-left: 4px solid var(--verde-medio);
+}
+
+.mision-frase {
+    font-size: 20px;
+    font-style: italic;
+    color: #1e3a0b;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.resaltado {
+    background: linear-gradient(120deg, #f5f0d7 0%, #f5e9c4 100%);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+}
+
+.mision-vision {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #2d3a1f;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    margin: 20px 0;
+    position: relative;
+    font-style: italic;
+}
+
+.comilla {
+    font-size: 30px;
+    color: var(--verde-medio);
+    opacity: 0.3;
+    font-family: serif;
+    line-height: 0;
+    position: relative;
+    top: 8px;
+}
+
+/* Lista mejorada */
 .mision-text ul {
     list-style: none;
+    margin-top: 25px;
 }
 
 .mision-text ul li {
-    background: #e8f5e9;
-    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: rgba(239, 250, 232, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 16px 18px;
+    border-radius: 16px;
+    border-left: 6px solid var(--verde-medio);
     margin-bottom: 12px;
-    border-radius: 12px;
-    color: var(--verde-oscuro);
-    font-weight: 500;
-    border-left: 5px solid var(--verde-medio);
+    transition: transform 0.3s ease;
 }
 
+.mision-text ul li:hover {
+    transform: translateX(8px);
+    background: rgba(180, 226, 139, 0.4);
+}
+
+
+
 /* ===========================================
-   SECCIONES GENERALES
+   SECCIONES
 =========================================== */
 .section {
-    padding: 70px 60px;
+    padding: 80px 60px;
+    position: relative;
 }
 
 .section-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.4rem;
     color: var(--verde-oscuro);
     margin-bottom: 1.5rem;
     position: relative;
+    text-align: center;
 }
 
 .section-title::after {
     content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: var(--verde-medio);
-    border-radius: 4px;
+    width: 80px;
+    height: 6px;
+    background: var(--verde-medio);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 10px;
 }
 
+/* Decoración de secciones */
+.section::before {
+    content: "🌱";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    opacity: 0.2;
+    transform: rotate(-15deg);
+}
 
 /* ===========================================
-   BENEFICIOS
+   BENEFICIOS – CARTAS CON ESTILO CRISTAL
 =========================================== */
 .cards {
     display: flex;
-    justify-content: center;
     gap: 30px;
-    margin-top: 35px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
-    background: white;
-    padding: 25px;
-    width: 260px;
-    border-radius: 14px;
-    border-left: 8px solid var(--verde-medio);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.25s;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 28px;
+    width: 280px;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "🌾";
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-fuerte);
+    border-color: var(--verde-claro);
+}
+
+.card:hover::before {
+    opacity: 0.3;
 }
 
 /* ===========================================
-   CÓMO FUNCIONA
+   CÓMO FUNCIONA – PASOS MEJORADOS
 =========================================== */
+.funciona {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, rgba(180, 226, 139, 0.1) 0%, rgba(250, 247, 239, 0.9) 100%);
+    position: relative;
+}
+
+.funciona::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
 .steps {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
     flex-wrap: wrap;
-    margin-top: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .step {
-    background: white;
-    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 30px;
     width: 260px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
+    border-radius: 14px;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.step::after {
+    content: "→";
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 60px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-fuerte);
+    border-color: var(--verde-medio);
+}
+
+.step:hover::after {
+    opacity: 0.3;
+    transform: rotate(25deg) translate(-10px, -10px);
 }
 
 .step i {
-    font-size: 40px;
+    font-size: 42px;
     color: var(--verde-medio);
+    background: rgba(116, 182, 74, 0.1);
+    padding: 15px;
+    border-radius: 50%;
     margin-bottom: 15px;
+    transition: all 0.3s ease;
 }
 
-/* ================================
-   CONTACTO + REDES INTEGRADAS
-================================ */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-/* Información */
-.contact-info p {
-    margin-bottom: .6rem;
-}
-
-.btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    padding: .8rem 1rem;
-    background: #25D366;
+.step:hover i {
+    background: var(--verde-medio);
     color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-top: 1rem;
+    transform: scale(1.1) rotate(5deg);
 }
 
-/* Redes dentro de contacto */
-.contact-redes {
-    margin-top: 2rem;
-}
-
-span{
-    font-size: 30px ;
-}
-
-i{
-    weight: 60px
-}
-.contact-redes h3 {
-    font-size: 1.8rem;
-    margin-bottom: .8rem;
+.step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
     color: var(--verde-oscuro);
 }
 
-.redes-grid {
-    display: flex;
-    gap: 1rem;
+.step p {
+    font-size: 16px;
+    color: #555;
 }
 
-.social-card {
+
+
+/* ===========================================
+   SECCIÓN CONTACTO UNIFICADA CON FONDO ELEGANTE
+=========================================== */
+.section-contacto-unificado {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    padding: 100px 60px;
+    border-top: 6px solid var(--verde-claro);
+    border-bottom: 6px solid var(--verde-medio);
+    overflow: hidden;
+}
+
+/* Overlay con gradiente elegante */
+.section-contacto-unificado .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 248, 235, 0.92) 0%, 
+        rgba(255, 242, 219, 0.85) 50%,
+        rgba(242, 255, 235, 0.9) 100%);
+    z-index: 1;
+}
+
+/* Contenedor del contenido */
+.contenido-contacto {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+.section-contacto-unificado h2 {
+    font-size: 48px;
+    color: var(--verde-oscuro);
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.section-contacto-unificado h2::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 6px;
+    margin: 15px auto 0;
+    background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-brillo), var(--verde-medio));
+    border-radius: 20px;
+}
+
+/* Subtítulo */
+.subtitulo {
+    text-align: center;
+    font-size: 20px;
+    color: #2c3e2c;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    box-shadow: var(--sombra-suave);
+}
+
+/* Grid de 2 columnas */
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ===========================================
+   COLUMNA IZQUIERDA - INFO Y REDES
+=========================================== */
+.info-redes {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 40, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.contact-info-box {
+    background: white;
+    border: 3px solid var(--verde-brillo);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra-media);
+    text-align: center;
+}
+
+.contact-info-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2d3e2d;
+}
+
+.contact-info-box .btn-red {
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+.titulo-redes {
+    font-size: 28px;
+    color: var(--verde-oscuro);
+    text-align: center;
+    margin: 30px 0 20px;
+    position: relative;
+}
+
+.titulo-redes::before,
+.titulo-redes::after {
+    content: "🌱";
+    font-size: 20px;
+    margin: 0 10px;
+    opacity: 0.7;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-red {
     display: flex;
     align-items: center;
-    gap: .5rem;
-    padding: .8rem 1rem;
-    background: var(--verde-menta);
-    border-radius: 10px;
-    color: #222;
-    text-decoration: none;
-    transition: .3s;
-    font-weight: 600;
-}
-
-.social-card:hover {
-    transform: translateY(-3px);
-}
-
-/* Formulario */
-.contact-form {
+    gap: 10px;
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--verde-medio);
+    box-shadow: var(--sombra-media);
+    color: var(--verde-oscuro);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-red i {
+    font-size: 22px;
+}
+
+.btn-red:hover {
+    background: var(--verde-medio);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(58, 115, 58, 0.3);
+}
+
+/* ===========================================
+   COLUMNA DERECHA - FORMULARIO
+=========================================== */
+.formulario-wrapper {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 40, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: .8rem;
-    margin-bottom: 1rem;
     border: 2px solid var(--verde-medio);
-    border-radius: 6px;
-    outline: none;
+    border-radius: 15px;
+    padding: 16px 20px;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: var(--verde-medio);
+    outline: none;
+    border-color: var(--verde-brillo);
+    box-shadow: 0 0 0 4px rgba(123, 191, 121, 0.2);
+    transform: scale(1.02);
 }
 
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
 
-/* ===========================================
-   FOOTER
-=========================================== */
-.footer {
-    padding: 20px;
-    text-align: center;
-    background: var(--corteza);
+.contact-form button {
+    padding: 16px 30px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+    border: none;
+    font-weight: bold;
     color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
 }
 
-/* ===========================================
-   RESPONSIVE
-=========================================== */
-@media (max-width: 900px) {
-
-    .menu-toggle { display: block; }
-
-    .nav {
-        position: fixed;
-        top: 0;
-        right: -280px;
-        width: 260px;
-        height: 100vh;
-        background: var(--verde-oscuro);
-        flex-direction: column;
-        padding: 80px 30px;
-        gap: 25px;
-        transition: right 0.4s ease;
-        z-index: 998;
-    }
-
-    .nav.active { right: 0; }
-
-    #overlay.show { display: block; }
-
-   .hero,
-    .mision {
-        flex-direction: column;
-        text-align: center;
-        padding: 120px 25px 60px;
-    }
-
-    .hero-img img,
-    .mision-img img {
-        height: 280px;
-        weight: 280px
-    }
+.contact-form button:hover {
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.4);
+    border-color: white;
 }

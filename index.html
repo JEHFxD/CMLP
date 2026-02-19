@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CultivaMarket</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<!-- ================== HEADER ================== -->
 <header class="header">
     <div class="logo">
-        <img src="image/cultivalogo.png" alt="CultivaMarket Logo"/>
-        <span>CultivaMarket</span>
+        <img src="image/cultivalogo.png" alt="CultivaMarket">
+        <span class = "brand-name">CultivaMarket</span>
     </div>
-
-    <div class="menu-toggle" id="menuBtn">☰</div>
-
-    <nav class="nav" id="navMenu">
+    <div class="hamburger">☰</div>
+    <nav class="nav" id="nav-menu">
         <a href="#beneficios">Beneficios</a>
         <a href="#mision">Misión</a>
-        <a href="#funciona">Cómo Funciona</a>
+        <a href="#comofunciona">Cómo Funciona</a>
         <a href="#contacto" class="btn-header">Contáctenos</a>
     </nav>
 </header>
 
-<div id="overlay"></div>
-
-<!-- HERO -->
+<!-- ================== HERO ================== -->
 <section class="hero">
     <div class="hero-text">
         <h1>Directamente del Campo</h1>
-        <p>CultivaMarket es una plataforma digital creada para conectar de manera directa a los campesinos con los consumidores, sin pasar por intermediarios que reduzcan sus ingresos o limiten su autonomía. Dentro de la plataforma, cada agricultor puede publicar sus productos con fotografías, descripciones, precios y disponibilidad real de sus cosechas. No solo se trata de mostrar lo que producen, sino de ofrecerles un espacio donde gestionan sus ventas, reciben pedidos y coordinan la entrega de forma clara y transparente.</p>
+        <p>
+            CultivaMarket es una plataforma digital creada para conectar de manera directa a los campesinos con los consumidores,
+            sin pasar por intermediarios que reduzcan sus ingresos o limiten su autonomía. Dentro de la plataforma, cada agricultor
+            puede publicar sus productos con fotografías, descripciones, precios y disponibilidad real de sus cosechas. No solo se
+            trata de mostrar lo que producen, sino de ofrecerles un espacio donde gestionan sus ventas, reciben pedidos y coordinan
+            la entrega de forma clara y transparente.
+        </p>
         <button class="btn-primary">Descargar App</button>
     </div>
 
@@ -40,30 +44,62 @@
     </div>
 </section>
 
-<!-- MISIÓN -->
+<!-- ================== MISIÓN ================== -->
 <section id="mision" class="mision section">
     <div class="mision-img">
-        <img src="image/granjero.png" alt="Agricultor sonriente">
+        <img src="image/campesino.jpeg" alt="Agricultor sonriente">
+        <div class="mision-img-badge">
+            <span>Conectando el campo colombiano</span>
+        </div>
     </div>
 
     <div class="mision-text">
-        <h2>Nuestra Misión</h2>
-        <p>
-            En CultivaMarket trabajamos por un puente directo entre quienes cultivan y quienes consumen. Impulsamos el campo colombiano y promovemos un comercio justo.
-        </p>
-        <p>
-            Queremos que cada agricultor tenga voz digital, que sus productos sean visibles y que las familias accedan a alimentos frescos, locales y transparentes.
-        </p>
+        <h2>Nuestra <span class="text-destacado">Misión</span></h2>
+        
+        <div class="mision-destacado">
+            <p class="mision-frase">
+                "Construimos un puente directo entre el campo y tu mesa"
+            </p>
+        </div>
+        
+        <div class="mision-contenido">
+            <p>
+                En <strong>CultivaMarket</strong> trabajamos por un <span class="resaltado">puente directo</span> 
+                entre quienes cultivan y quienes consumen. Impulsamos el <span class="resaltado">campo colombiano</span> 
+                y promovemos un comercio justo y transparente.
+            </p>
+            
+            <p class="mision-vision">
+                <span class="comilla">❝</span> 
+                Queremos que cada agricultor tenga <strong>voz digital</strong>, que sus productos sean visibles 
+                y que las familias accedan a alimentos frescos, locales y transparentes.
+                <span class="comilla">❞</span>
+            </p>
+        </div>
 
-        <ul>
-            <li><strong>Impulso real a la economía rural:</strong> mejores ingresos y mayor autonomía.</li>
-            <li><strong>Logística optimizada:</strong> menos intermediarios, menor impacto ambiental.</li>
-            <li><strong>Productos frescos y de temporada:</strong> consumo responsable y local.</li>
+        <ul class="mision-puntos">
+            <li>
+                <span class="punto-icono"></span>
+                <div class="punto-texto">
+                    <strong>Impulso real a la economía rural:</strong> mejores ingresos y mayor autonomía.
+                </div>
+            </li>
+            <li>
+                <span class="punto-icono"></span>
+                <div class="punto-texto">
+                    <strong>Logística optimizada:</strong> menos intermediarios, menor impacto ambiental.
+                </div>
+            </li>
+            <li>
+                <span class="punto-icono"></span>
+                <div class="punto-texto">
+                    <strong>Productos frescos y de temporada:</strong> consumo responsable y local.
+                </div>
+            </li>
         </ul>
     </div>
 </section>
-
-<!-- BENEFICIOS -->
+<!-- ================== BENEFICIOS ================== -->
 <section id="beneficios" class="beneficios section">
     <h2 class="section-title">¿Por qué elegir CultivaMarket?</h2>
 
@@ -79,7 +115,6 @@
             <p>Eliminamos intermediarios abusivos para que el agricultor gane más y el consumidor pague menos.</p>
         </div>
 
-
         <div class="card">
             <h3>Variedad Local</h3>
             <p>Accede a cosechas reales de agricultores locales: frutas, verduras, granos, hierbas y más.</p>
@@ -93,7 +128,7 @@
     </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
+<!-- ================== CÓMO FUNCIONA ================== -->
 <section id="funciona" class="funciona section">
     <h2 class="section-title">Cómo Funciona</h2>
 
@@ -110,6 +145,7 @@
             <h3>Elige lo Mejor</h3>
             <p>Los consumidores seleccionan productos frescos y locales según sus necesidades.</p>
         </div>
+
         <div class="step">
             <i class="fas fa-cart-plus"></i>
             <h3>Compra Rápida</h3>
@@ -125,59 +161,58 @@
     </div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="contacto section">
-    <h2>¿Tienes preguntas?</h2>
+<!-- ================== CONTACTO Y FORMULARIO UNIFICADOS ================== -->
+<section class="section-contacto-unificado">
+    <div class="overlay"></div>
+    
+    <div class="contenido-contacto">
+        <h2>¿Tienes preguntas?</h2>
+        <p class="subtitulo">Estamos aquí para ayudarte a transformar tu forma de consumir alimentos.</p>
 
-    <div class="contact-grid">
-        
-        <!-- INFO + REDES -->
-        <div class="contact-info">
-            <p>Estamos aquí para ayudarte a transformar tu forma de consumir alimentos.</p>
-            <p><strong>Correo:</strong> cultivamarket3@gmail.com</p>
+        <div class="grid-contacto">
+            <div class="info-redes">
+                <div class="contact-info-box">
+                    <p><strong>Correo:</strong> cultivamarket3@gmail.com</p>
+                    <a href="#" class="btn-red"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
 
-            <a class="btn-whatsapp" 
-               href="https://wa.me/573004567890?text=Hola%20CultivaMarket,%20quiero%20más%20información."
-               target="_blank">
-               <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-
-            <!-- REDES DENTRO DEL CONTACTO -->
-            <div class="contact-redes">
-                <h3>Síguenos</h3>
-
-                <div class="redes-grid">
-                    <a href="https://www.instagram.com/cultivamarket1?igsh=bWVwbnBtdHN5dHVn" target="_blank" class="social-card instagram">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
-
-                    <a href="https://www.youtube.com/@CultivaMarket" target="_blank" class="social-card youtube">
-                        <i class="fab fa-youtube"></i>
-                        <span>YouTube</span>
-                    </a>
+                <h3 class="titulo-redes">Síguenos</h3>
+                <div class="redes-sociales">
+                    <a href="https://www.instagram.com/cultivamarket1?igsh=bWVwbnBtdHN5dHVn" class="btn-red"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.youtube.com/@CultivaMarket" class="btn-red"><i class="fab fa-youtube"></i> YouTube</a>
                 </div>
             </div>
+            <div class="formulario-wrapper">
+                <form class="contact-form">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
         </div>
-
-        <!-- FORMULARIO -->
-        <form class="contact-form" action="https://formsubmit.co/cultivamarket3@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Nombre completo" required>
-            <input type="email" name="email" placeholder="Correo electrónico" required>
-            <textarea name="message" placeholder="Mensaje" required></textarea>
-
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="box">
-
-            <button class="btn-primary" type="submit">Enviar Mensaje</button>
-        </form>
     </div>
 </section>
 
 <footer class="footer">
-    © 2026 CultivaMarket – Todos los derechos reservados.
+    <div class="footer-content">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/cultivamarket1" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@CultivaMarket" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#beneficios">Beneficios</a>
+            <a href="#mision">Misión</a>
+            <a href="#comofunciona">Cómo Funciona</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        
+        <p>© 2026 CultivaMarket – Todos los derechos reservados.</p>
+    </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
