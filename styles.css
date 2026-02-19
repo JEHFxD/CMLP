@@ -582,7 +582,7 @@ p {
 .steps {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
@@ -613,6 +613,7 @@ p {
     opacity: 0.1;
     transform: rotate(15deg);
     transition: all 0.3s ease;
+    display:none;
 }
 
 .step:hover {
